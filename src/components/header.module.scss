@@ -1,0 +1,147 @@
+.header {
+  background: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.9)
+  );
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  transition: 0.8s;
+  font-family: "Titles";
+  font-size: 1.75rem;
+  color: white;
+  letter-spacing: 0.2rem;
+  box-shadow: 1px 1px 5px 3px black;
+}
+
+.navbar {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  width: 70%;
+  transition: width 0.5s;
+
+  li {
+    margin: auto 0;
+  }
+}
+
+span {
+  font-size: 1.5rem;
+}
+
+.icons {
+  display: flex;
+
+  a {
+    cursor: pointer;
+  }
+
+  a:hover {
+    opacity: 0.9;
+  }
+  a:nth-child(1) {
+    margin-right: 0.3rem;
+  }
+}
+
+.hamburger {
+  display: none;
+  flex: 1 1 50%;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1rem;
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 15px;
+  }
+}
+
+.close {
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+  margin-left: 1rem;
+}
+
+.brand {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .hamburger {
+    display: block;
+    float: right;
+  }
+
+  .navbar.active {
+    .hamburger {
+      display: none;
+    }
+
+    .close {
+      display: block;
+    }
+  }
+
+  .nav-list {
+    width: 0;
+
+    li {
+      display: none;
+    }
+  }
+
+  .nav-list.active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    width: 40%;
+    font-size: 1.5rem;
+    background: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.9)
+    );
+
+    li {
+      display: block;
+      text-align: left;
+      margin: 0.5rem 1rem 0.5rem 2rem;
+    }
+
+    .nav-link:first-of-type {
+      margin-top: 5rem;
+    }
+  }
+
+  .collapse-navbar {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-list.active {
+    width: 50%;
+  }
+}
